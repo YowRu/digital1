@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/loading.js"></script>
+    <script src="js/FlexSlider/jquery.flexslider-min.js"></script>
+    <script src="js/woocommerce-FlexSlider-d04ac5a/jquery.flexslider-min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="js/FlexSlider/flexslider.css" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" type="text/css">
+    <link href="css/jquery-ui.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/layout.css" type="text/css">
+    <title>聚聯數位行銷</title>
+</head>
+<style> 
+    h2{text-align:center;margin:70px auto;}
+    background-size:contain;width:50px;height:50px;}
+    .flexslider{height:auto;overflow:hidden;margin-bottom:0;}
+    .flex-control-nav{display:none;}
+    #row1{width:auto;margin:0 auto 50px;padding-top:50px;
+        display:flex;justify-content:center;align-items:center;}
+    #main #row1 .right{width:500px;margin-left:20px;}
+    #main #row1 .left img.title{height:35px;display:block;margin: 0 auto 10px;}
+    #main #row1 .left div{background: #222;width:350px;position:relative;box-shadow:2px 2px 4px #444;}
+    #main #row1 .left div:after{content:'';display:block;border:3px solid #5c5c5c;width:100%;height:260px;
+    position:absolute;left:-20px;bottom:-20px;z-index:-1;}
+    #main #row1 .left h2{margin:10px auto;color:#fff;}
+    #main #row1 .left p{line-height:2rem;color:#fff;padding:20px;}
+    #main #row1 .right iframe{width:100%;}
+    .wrap-before {
+    shape-outside: polygon(0 0, 100% 0, 43% 54%, 100% 100%, 0 100%);
+    float: left;width: 34%;height: 70%;
+    -webkit-clip-path: polygon(0 0, 100% 0, 43% 54%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 43% 54%, 100% 100%, 0 100%);
+    }
+    .wrap-after {
+        shape-outside: polygon(100% 0, 0 0, 43% 54%, 0 100%, 100% 100%);
+        float: right;width:31%;height: 66%;
+        -webkit-clip-path: polygon(100% 0, 0 0, 43% 54%, 0 100%, 100% 100%);
+        clip-path: polygon(100% 0, 0 0, 43% 54%, 0 100%, 100% 100%);
+    }
+    .st0{fill:#FFFFFF;}
+    #main .row2 .title{height:35px;display:block;margin:120px auto 50px;}
+    #main .row2 ul{max-width:800px;width:100%;margin:0 auto;
+        display:flex;justify-content:center;align-items:center;}
+    #main .row2 ul li{margin:0 auto;}
+    #main .row2 ul li img{width:100px;}
+    #main .flexslider2{max-width:1480px;width:80%;margin:50px auto;}
+    #main .flexslider2 .slides li img{height:70px;}
+    #main #row3{max-width:1480px;width:80%;margin:50px auto;
+        display:flex;justify-content: center;align-items: center;flex-wrap: wrap;}
+    #main #row3 section{margin:0.5%;width:32%;height:300px;
+        box-shadow:2px 2px 7px #acacac;position:relative;
+        position:relative;overflow:hidden;cursor:pointer;}
+    #main #row3 section img{width:100%;object-fit: contain;}
+    #main #row3 section .text{position:absolute;bottom:0;left:0;z-index:2;width:100%;background:#444;height:70px;transition:all 1s;}
+    #main #row3 section .text h2{text-align:center;color:#fff;height:70px;margin:0;padding:10px 0;}
+    #main #row3 section .text p{opacity:0;padding:10px;padding-top:0;transition:all 1s;color: #fff;}
+    #main #row3 section:hover:before{content: '';display:block;width:100%;height:100%;
+        position:absolute;top:0;left:0;z-index:1;background:rgba(0, 0, 0, 0.45);}
+    #main #row3 section:hover .text{height:214px;}
+    #main #row3 section:hover .text h2{height:32px;}
+    #main #row3 section:hover .text p{opacity:1;}
+    .image1{background: url(img/svg/1.png) no-repeat center top;background-size: contain;
+        width: auto;height: 35px;margin: 0 auto;}
+    .image2{background: url(img/svg/2.png) no-repeat center top;background-size: contain;
+        width: auto;height: 35px;margin: 0 auto;}
+    .image3{background: url(img/svg/3.png) no-repeat center top;background-size: contain;
+        width: auto;height: 35px;margin: 0 auto;}
+    .form{justify-content: center;align-items:flex-start;position:fixed;z-index:3;top:0;left:0;width:100%;
+    background-color:rgba(0, 0, 0, 0.84);overflow: scroll;display:none;}
+    #contactForm{width:500px;margin:0 auto;border: 1px solid #444;padding:30px;
+        position:relative;background:#fff;transform: rotateX(30deg);}
+    #contactForm .flex{display:flex;width:80%;align-items:center;}
+    #contactForm .flex p{width:100px;font-size:1.2rem;color:#444;}
+    
+    #contactForm .close{position:absolute;font-size:2rem;color:#444;right:20px;top:20px;cursor:pointer;}
+    #contactForm h2{margin:40px auto;}
+    #contactForm>div{height:75px;margin:15px auto;}
+    #contactForm input{display:block;width:80%;margin:10px auto;height:40px;
+        border:0;border-bottom:1px solid #999;font-size:1.2rem;color:#555;}
+    #contactForm label{display:block;width:80%;margin:0 auto;opacity:0;color: navy;}
+    #contactForm input:focus{border-bottom:3px solid navy;}
+    
+    #contactForm select{display:block;width:90%;height:40px;background:#f5f5f5;
+    border:0;font-size:1.2rem;color:#555;-webkit-appearance: none;padding: 2px 10px;box-sizing: border-box;}
+  
+    #quire{display:block;width:80%;height:200px;margin:30px auto;resize:none;font-size:1.2rem;}
+     @media(max-width:950px){
+        #main #row1{flex-direction:column;padding-top:0;}
+        #main #row1 .left,#main #row1 .right{width:80%;}
+        #main #row1 .right{margin-left:0;}
+        #main #row1 .left div{width:80%;margin:0 auto 50px;}
+        #main #row1 .left div:after{height:200px;}
+        #main .row2 .title{margin:70px auto 50px;}
+    }
+    @media(max-width:800px){
+        #main #row1 .left div:after{height:215px;}
+    }
+    @media(max-width:750px){ 
+        #main #row1 .right{width:90%;}
+    }
+     @media(max-width:730px){ 
+         #main #row1 .left div{width:90%;}
+         #main #row1 .right{width:95%;}
+    }
+    @media(max-width:630px){ 
+        #main #row1 .left div:after{height:230px;}
+    }
+    @media(max-width:620px){
+        #main #row1 .left div:after{height:250px;}
+    }
+    @media(max-width:600px){
+        #main #row1 .left,#main #row1 .right{width:100%;}
+    }
+    @media(max-width:500px){
+        #row1{width: 90%;}
+    }
+    @media(max-width:414px){
+        #row1,#main #row1 .left div{width: 98%;}
+        #main #row1 .left div:after{display:none;}
+    }
+    @media(max-width:350px){
+        #main #row1 .left p{text-align: center;}
+    }
+</style>
+<body>
+    <header></header>
+    <div id="main">
+        <div class="flexslider">
+              <ul class="slides">
+                <li><img src="img/slider/1.jpg"/></li>
+                <li><img src="img/slider/2.png"/></li>
+                <li><img src="img/slider/3.jpg"/></li>
+              </ul>
+        </div>    
+        <div id="row1">
+          <div class="left" >   
+             <img src="img/svg/about.png" alt="about" class="title">
+             <div><p>聚聯數位行銷股份有限公司(DigitalNOW Limited) 以豐富舉辦活動的經驗結合最新行動裝置票卡技術，與技術團隊共同開發出一套數位化活動流程。透過雲端科技服務實現全數位化活動流程，運用在餐飲、商場、研討會、會議活動等，期許以科技結合專業提供更多活動上的數位化應用。</p>
+              </div></div>
+          <div class="right">
+              <iframe height="315" src="https://www.youtube.com/embed/3Ad7Z6bn1Nk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="row2">
+             <img src="img/svg/service.png" alt="service" class="title">
+             <ul>
+                 <li>
+                    <img src="img/svg/1.png" alt="">
+                    <p>獨家票卡技術</p>
+                 </li>
+                 <li>
+                    <img src="img/svg/2.png" alt="">
+                    <p>數位抽獎遊戲</p>
+                 </li>
+                 <li>
+                    <img src="img/svg/3.png" alt="">
+                    <p>線上問券數位行銷</p>
+                 </li>
+             </ul>
+             
+        </div>
+        <div id="row3">
+            <section data-aos-delay="1000" data-aos="fade-right" >
+                <img src="img//service/1.jpg" alt="">
+                <div class="text">
+                    <h2>活動報到</h2>
+                    <p>-來賓專屬活動票卡，憑票卡快速進場</p>
+                    <p>-全場活動皆可透過活動票卡串接與執行，數位科技使活動顯專業</p>
+                </div>
+            </section>
+            <section data-aos-delay="1000" data-aos="fade-right" >
+                <img src="img//service/2.1.png" alt="">
+                <div class="text">
+                    <h2>活動資訊</h2>
+                    <p>-可於票卡隨時查詢：大會宣告事項、場地平面圖、講師介紹…等，活動訊息不漏接</p>
+                </div>
+            </section>
+            <section data-aos-delay="1000" data-aos="fade-right" >
+                <img src="img//service/3.png" alt="">
+                <div class="text">
+                    <h2>數位集點</h2>
+                    <p>-還在用落伍的集點卡蓋章、貼紙集點? 數位集點讓來賓於手機查詢隨時可查詢集點進度，方便又環保</p>
+                </div>
+            </section>
+            <section data-aos-delay="1000" data-aos="fade-right" >
+                <img src="img/4.png" alt="">
+                <div class="text">
+                    <h2>線上問卷</h2>
+                    <p>-專屬票卡問卷省去來賓重複填寫個資程序，兌換機制好輕鬆</p>
+                    <p>-統計數據即時看，免人工整理</p>
+                    <p>-減少紙本浪費，落實無紙化</p>
+                </div>
+            </section>
+            <section data-aos-delay="1500" data-aos="fade-right" >
+                <img src="img//service/5.jpg" alt="" style="object-fit: cover;height:100%;">
+                <div class="text">
+                    <h2>創意行銷</h2>
+                    <p>-創意數位遊戲讓行銷產品更有趣</p>
+                </div>
+            </section>
+            <section data-aos-delay="1500" data-aos="fade-right" >
+                <img src="img//service/6.jpg" alt="">
+                <div class="text">
+                    <h2>抽獎活動</h2>
+                    <p>-電子化抽獎，公平看得見</p>
+                </div>
+            </section>
+            <section data-aos-delay="1500" data-aos="fade-right" >
+                <img src="img//service/7.png" alt="">
+                <div class="text">
+                    <h2>贈品兌換</h2>
+                    <p>-兌獎機制避免重複領獎</p>
+                </div>
+            </section>
+            <section data-aos-delay="1500" data-aos="fade-right" >
+                <img src="img//service/8.2.png" alt="">
+                <div class="text">
+                    <h2>尾牙遊戲</h2>
+                    <p>-獨家開發數位骰子樂遊戲，保證嗨翻全場</p>
+                </div>
+            </section>
+            <section data-aos-delay="1500" data-aos="fade-right" >
+                <img src="img//service/9.jpg" alt="">
+                <div class="text">
+                    <h2>數位檔案</h2>
+                    <p>-簡報資料隨選隨看，減少紙張與印刷成本</p>
+                    <p>-產品型錄可下載，客戶帶著走不會隨手丟</p>
+                </div>
+            </section>
+            <section data-aos-delay="1500" data-aos="fade-right" >
+                <img src="img//service/10.png" alt="">
+                <div class="text">
+                    <h2>圖表監控</h2>
+                    <p>-隨選隨看</p>
+                    <p>-帶著走不會隨手丟</p>
+                </div>
+            </section>
+            <section data-aos-delay="1500" data-aos="fade-right" >
+                <img src="img//service/11.png" alt="">
+                <div class="text">
+                    <h2>APP串接</h2>
+                    <p>-文字說明</p>
+                </div>
+            </section>
+            <section data-aos-delay="1500" data-aos="fade-right" >
+                <img src="img//service/12.png" alt="">
+                <div class="text">
+                    <h2>點數儲值</h2>
+                    <p>-文字說明</p>
+                </div>
+            </section>
+        </div>
+        <div class="flexslider2 carousel" id="row4">
+          <h2>我們的客戶</h2>
+          <ul class="slides">
+            <li><img src="img/logo/logo-01@2x.png" /></li>
+            <li><img src="img/logo/logo-02@2x.png" /></li>
+            <li><img src="img/logo/logo-03@2x.png" /></li>
+            <li><img src="img/logo/logo-04@2x.png" /></li>
+            <li><img src="img/logo/logo-05@2x.png" /></li>
+            <li><img src="img/logo/6.png" /></li>
+            <li><img src="img/logo/logo-07@2x.png" /></li>
+            <li><img src="img/logo/logo-08@2x.png" /></li>
+            <li><img src="img/logo/logo-09@2x.png" /></li>
+            <li><img src="img/logo/10.png" /></li>
+            <li><img src="img/logo/11.png" /></li>
+            <li><img src="img/logo/12.png" /></li>
+          </ul>
+        </div>
+        <div class="form">
+             <form name="contactForm" id="contactForm" method="post" action="">
+              <div class="close">X</div>
+              <h2>聯絡我們</h2>
+              <div>
+                  <label for="name">輸入姓名*</label>
+                  <input type="text" name="name" id="name" placeholder="聯絡姓名" required>
+              </div>
+               <div>
+                   <label for="name">輸入E-Mail*</label>
+                   <input type="email" name="email" id="email" placeholder="E-Mail" required>
+               </div>
+               <div>
+                  <label for="company">輸入公司名稱</label>
+                  <input type="text" name="company" id="company" placeholder="公司名稱"> 
+               </div>
+               <div>
+                   <label for="phone">輸入聯絡電話*</label>
+                   <input type="text" name="phone" id="phone" placeholder="聯絡電話" required>
+               </div>
+               <div class="flex">
+                   <p>主要需求</p>
+                   <select name="sevice" id="sevice">
+                      <option value="請選擇">請選擇 ▾ </option>
+                      <option value="行動票卡">行動票卡</option>
+                      <option value="數位抽獎">數位抽獎</option>
+                      <option value="線上問卷">線上問卷</option>
+                      <option value="其他">其他</option>
+                   </select> 
+               </div>
+               <div class="flex">
+                   <p>活動時間</p><input type="text" id="datepicker">
+               </div>
+               <div class="flex">
+                   <p>活動人數</p>
+                   <select name="people" id="people">
+                      <option value="請選擇">請選擇 ▾ </option>
+                      <option value="0-100">0-100</option>
+                      <option value="100-500">100-500</option>
+                      <option value="500-1000">500-1000</option>
+                      <option value="1000以上">1000以上</option>
+                   </select>
+               </div> 
+               <textarea name="quire" id="quire" cols="30" rows="10" placeholder="需求說明"></textarea>
+              
+               <div><input type="submit" value="送出"></div>
+        </form>
+            <script>
+            $('#datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
+            </script>
+        </div>  
+    </div>
+    <footer></footer>
+<script>
+$(window).load(function() {
+
+
+
+var W=$(window).width();
+var H=$(window).height();
+var h=$('#main #row1 .left div').height();
+$('#main .bg').height(H);
+$('.form').height(H);    
+    
+$('.flexslider').flexslider({
+    animation: "slide"
+  });
+    
+$('.flexslider2').flexslider({
+    animation: "slide",
+    itemWidth: 190,
+    itemMargin: 3
+});
+
+    //row3
+     AOS.init({
+            easing: 'easeInQuad',
+            duration: '1300'
+        });
+    //input css
+    $('#contactForm input').focus(function(){
+        $(this).siblings('label').css({'opacity':'1'});
+    });
+    $('#contactForm input').blur(function(){
+         $(this).siblings('label').css({'opacity':'0'});
+    })
+     
+ });    
+</script> 
+</body>
+</html>

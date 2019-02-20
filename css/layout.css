@@ -1,0 +1,115 @@
+@import url(http://fonts.googleapis.com/earlyaccess/cwtexhei.css);/*font-family: 'cwTeXHei', sans-serif;黑體*/
+@import url(http://fonts.googleapis.com/earlyaccess/cwtexkai.css);/*font-family: 'cwTeXKai', serif;楷體*/
+*{margin:0;padding:0;} 
+body ul, body li{padding:0;margin:0;list-style:none;}
+body a{text-decoration:none;}
+input:focus{outline:none}
+select::-ms-expand{display:none;}
+::-webkit-scrollbar {width: 0px;background:#ffffff;height:8px;}
+::-webkit-scrollbar-thumb {background: rgba(255, 255, 255, 0.16);}   
+body{margin:0 auto;padding:0;width:100%;min-width:270px;font-family:'微軟正黑體','Microsoft JhengHei','cwTeXHei', sans-serif;
+    background-color:white;position:relative;}
+header{width:100%;margin:0 auto;border-bottom:1px solid #e8e8e8;padding-bottom: 5px;box-sizing:border-box;
+    position:fixed;top:0;z-index:3;background-color:#fff;}
+header .bg{width:100%;position:absolute;top:0;left:0;z-index:2;display:none;background-color:rgb(28, 28, 28);}
+header nav{width:30px;height:40px;cursor:pointer;display:none;position:absolute;right:0;top:22px;}   
+header nav span{position: absolute;display: block;width: 100%;height: 2px;background: #030f32;
+-webkit-transition: all .3s ease 0s;transition: all .3s ease 0s;}
+header nav span:nth-of-type(1){top:2px;}
+header nav span:nth-of-type(2){top:12px;}
+header nav span:nth-of-type(3){top:22px;}
+.menuOpen header nav span:nth-of-type(1){top: 12px;transform: rotate(45deg);-webkit-transform: rotate(45deg);background:#fff;}
+.menuOpen header nav span:nth-of-type(2){width: 0;right: 0}
+.menuOpen header nav span:nth-of-type(3){top: 12px;transform: rotate(-45deg);-webkit-transform: rotate(-45deg);background:#fff;}
+header .row1,header .row p{max-width:1480px;width:100%;margin:0 auto;height:74px;display:flex;align-items:center;position: relative}
+header .row{background: #111;width:100%;padding:0 20px;}
+header .row p{color:#fff;font-size:13px;height:30px;}
+header .row p a,header .row p span{color:#fff;height:20px;margin:5px 0;transition: all 0.7s;}
+header .row p a:hover,header .row p span:hover{color:#e33e32; }
+header .row p span:nth-of-type(1):after{content:' | ';margin-right: 5px;}
+header .row1>a{display:inline-block;margin-left:5%;}
+header .row1 a h1{font-size:0;text-indent:-9999px;width:163px;height:35px;background:url(../img/logo@2x.png) no-repeat center -1px;background-size:contain;color:transparent;}
+header .row1 .right{width:90%;text-align:center;display:flex;justify-content:flex-end;padding-right:5%;}  
+header .row1 .right a{color:#444;font-weight:600;display:inline-block;width:auto;margin:0 10px;line-height:70px;
+    font-size:1rem;transition:all 0.5s;padding:20px 0 20px;cursor:pointer;}
+header .row1 .right a:hover{color:#e33e32;}
+header .row1 .menu{width:100%;position:absolute;top:70px;right:0;z-index:3;padding-left:0;display: none;}
+header .row1 .menu a{display:block;background-color:rgb(28, 28, 28);margin:0;color:#fff;border-bottom:1px solid #fff;line-height:70px;text-align: center;}
+#main {width: 100%;margin-top:104px;}
+
+/*麵包屑*/
+#main #breadcrumbs{display:flex;align-items: center; width: 100%;height:30px;}
+#main #breadcrumbs a{ padding:.7em 1em;color: #444;text-shadow: 0 1px 0 rgba(255,255,255,.5);}
+#main #breadcrumbs a:hover{color:#d10c6e;}
+#main #breadcrumbs .current{font-weight:normal;background:transparent;color: #1053bf;display:inline-block; width:96px;overflow:hidden;white-space: nowrap;text-overflow:ellipsis;}
+/*flexslider*/
+.flexslider{border:0;}
+.flex-direction-nav a{z-index:1;}
+/*footer*/
+footer{width:100%;padding:40px 0 30px;margin:0 auto;color:#6f6f6f;background-color:#222;
+    text-align:center;font-size:0.9rem;}
+footer .wp{max-width:1480px;margin:0 auto;}
+footer .top,footer .top .m{display:flex;}
+footer .top h3 a,footer .top h4{color:#939393;transition:all 1s;}
+footer .top ul li,footer .top p,footer .top p a{color:#6f6f6f;transition: all 1s;}
+footer .top h3:hover a,footer .top p:hover a{color:#f44336;}
+footer .top .l p{word-break:break-all;width:80%;margin:0 auto;}
+footer .top .m{border:1px solid #6f6f6f;border-top:0;border-bottom:0; }
+footer .top .m .mr{width:50%;align-items: flex-start;margin-top: 0;}
+footer .top .row {width:33%;margin:0;padding:0;}
+footer .top .r{text-align:left;padding-left:20px;}
+
+footer .top .row img{width:187px;}
+footer .down{padding-top:20px;}
+/*購物車*/  
+#bottom2{display:flex;justify-content: flex-start;align-items:flex-start;text-align: center;padding-top: 10px;}
+#bottom2 {position: relative;}    
+#bottom2 #cartInfo{position:fixed;z-index:5;width:50px;height:50px;bottom:10%;right:5%;
+border-radius:50%;cursor:pointer;background-color:#fff;display:none;}
+#bottom2 #cartInfo span{display:block;width:25px;height:25px;color:#f44336;background-color:transparent;text-align:center;font-size:18px;line-height:18px;font-weight: bold;position:absolute;left:30%;top:5px;z-index:5;}
+#bottom2 #cartInfo i.flaticon-tool{position:absolute;right:5%;bottom:10%;font-size:2rem;color:#fff;background-color: aqua;}
+#bottom2 #cartInfo i.flaticon-tool:before{content:"\f11c";position:absolute;top:-30px;left:-40px;background-color: aqua;}
+/*backtop*/
+#backtop{width:45px;height:45px;background: url("../img/arrow-up_b.png") no-repeat center;background-size: contain; display: none; position:fixed; right:5%;bottom:5%;z-index:5; cursor: pointer;opacity:0.8;}
+
+@media(max-width:1280px){
+           header .row1 .right a{font-size:14px;}
+}
+    @media(max-width:900px){
+           header .row1 .right a{font-size:0.9rem;}
+    }
+@media(max-width:780px){
+    footer .top .l{display:none;}
+    footer .top .m{border-left: 0;}
+    footer .top .row{width:50%;}
+}
+    @media(max-width:710px){
+       header .row1 .right{padding-right: 10px;}
+       header .row1 .right a{color:#666;}
+    }
+@media(max-width:700px){
+    header .row1{width: 90%;}
+    }
+@media(max-width:600px){
+    
+    header nav{display: block;z-index: 3;}
+    header .row1 .right{display: none;}
+    header .row1 .right a{font-size:0.8rem;}
+    header .row p{width:90%;}
+    footer .down{width:98%;margin:0 auto;}
+}
+@media(max-width:550px){
+    footer .top .m.row{width:45%;}
+    footer .top .r.row{width:55%;}
+}
+@media(max-width:500px){
+    footer .top{flex-direction: column-reverse;}
+    footer .top .m.row,footer .top .r.row{width:100%;margin:0 auto;border:0;}
+    footer .top .r.row {text-align:center;margin-bottom:35px;padding-left: 0;}
+    footer .down{padding-top:0;}
+}
+@media(max-width:414px){
+    header .row p{flex-direction: column;height: auto;align-items: flex-start;}
+    header .row p span:nth-of-type(1):after{content:' ';}
+   
+}

@@ -1,0 +1,79 @@
+<div class="row">
+    <p><span>+886 2 89796888</span><span><a href="mailto:marketing@digitalnow.com.tw">MARKETING@DIGITALNOW.COM.TW</a></span></p>
+</div>
+<div class="row1">
+    <a href="index.html"><h1>聚聯數位行銷</h1></a>
+    <nav>
+        <span></span>
+        <span></span>
+        <span></span>
+    </nav>
+    <div class="right">
+        <a href="#row1">關於聚聯</a>
+        <a href="#row3">服務項目</a>
+        <a href="#row4">我們的客戶</a>
+        <a class="contactForm">聯絡聚聯</a>
+    </div>
+    <div class="menu">
+        <a href="#row1">關於聚聯</a>
+        <a href="#row3">服務項目</a>
+        <a href="#row4">我們的客戶</a>
+        <a class="contactForm">聯絡聚聯</a>
+    </div>
+</div>
+<div class="bg"></div>
+<script>
+    
+    var $H=$(window).height();
+    var $W=$(window).width();
+    $('header .bg').height($H+70);
+    var h=$('header .row1 .menu').height();
+    if($H-40 < h){
+       $('header .row1 .menu').css({'overflow-y':'scroll'});
+       }
+   $(window).resize(function(){ 
+       
+        var $H=$(window).height();
+        var $W=$(window).width();
+        $('header .menu').hide();
+        $('header .bg').height($H+70);
+        var h=$('header .row1 .menu').height();
+        if($H-40 < h){
+            $('header .row1 .menu').css({'overflow-y':'scroll'});
+        }
+   });
+    /*menu*/
+    $('header nav').click(function(){
+        $('header .menu').fadeToggle();
+        $('header .bg').toggle();
+        $("body").toggleClass('menuOpen');
+    });
+$('header .bg').click(function(){
+        $('header .menu').fadeToggle();
+        $('header .bg').hide();
+        $("body").toggleClass('menuOpen');
+    });
+    
+    $(function() {
+           $('a[href=#row1]').click(function() {
+               $('html,body').animate({
+                 scrollTop:$('#row1').offset().top-107
+               },800);});
+        $('a[href=#row3]').click(function() {
+               $('html,body').animate({
+                 scrollTop:$('#row3').offset().top-107
+               },800);});
+           $('a[href=#row4]').click(function() {
+               $('html,body').animate({
+                 scrollTop:$('#row4').offset().top-107
+               },800);});
+    });   
+    $('#datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
+    $('.contactForm').click(function(){
+        $('.form').css({'display':'flex'});
+         $.extend($.datepicker,{_checkOffset:function(inst,offset,isFixed){return offset}});
+    });
+    $('#contactForm .close').click(function(){
+        $('.form').css({'display':'none'});
+    });
+</script>
