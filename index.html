@@ -326,7 +326,7 @@
     
 <script>
 $(window).load(function() {
-
+$.extend($.datepicker,{_checkOffset:function(inst,offset,isFixed){return offset}});
 var W=$(window).width();
 var H=$(window).height();
 var h=$('#main #row1 .left div').height();
