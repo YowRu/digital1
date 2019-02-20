@@ -331,7 +331,7 @@ var W=$(window).width();
 var H=$(window).height();
 var h=$('#main #row1 .left div').height();
 $('#main .bg').height(H);
-$('.form').height(H);    
+$('#contactForm').height(H);    
     
 $('.flexslider').flexslider({
     animation: "slide"
@@ -359,7 +359,7 @@ $('.flexslider2').flexslider({
           dateFormat: 'yy-mm-dd',
           beforeShow: function(input, obj) {
             $(input).after($(input).datepicker('widget'));
-              };
+              }
    });
 
  });    
