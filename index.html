@@ -355,7 +355,11 @@ $('.flexslider2').flexslider({
     $('#contactForm input').blur(function(){
          $(this).siblings('label').css({'opacity':'0'});
     })
-   $('#datepicker').datepicker({ dateFormat: 'yy-mm-dd', beforeShow: function () { } });
+   $('#datepicker').datepicker({ 
+          dateFormat: 'yy-mm-dd',
+          beforeShow: function(input, obj) {
+            $(input).after($(input).datepicker('widget'));
+              });
 
  });    
 </script> 
