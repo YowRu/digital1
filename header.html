@@ -32,7 +32,7 @@
        $('header .row1 .menu').css({'overflow-y':'scroll'});
        }
    $(window).resize(function(){ 
-       
+       $.extend($.datepicker,{_checkOffset:function(inst,offset,isFixed){return offset}});
         var $H=$(window).height();
         var $W=$(window).width();
         $('header .menu').hide();
@@ -68,12 +68,18 @@ $('header .bg').click(function(){
                  scrollTop:$('#row4').offset().top-107
                },800);});
     });   
-    $('#datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
+    //datepicker
+   $('#datepicker').datepicker({ 
+       dateFormat: 'yy-mm-dd',
+       beforeShow: function(input, obj) {
+            $(input).after($(input).datepicker('widget'));
+        }                        
+                               });
     $('.contactForm').click(function(){
-        $('.form').css({'display':'flex'});
-         $.extend($.datepicker,{_checkOffset:function(inst,offset,isFixed){return offset}});
+        $('.form').fadeIn().css({'display':'flex','opacity':'1','z-index':'3'});
+        $('#contactForm').css({'opacity':'1'});
     });
     $('#contactForm .close').click(function(){
-        $('.form').css({'display':'none'});
+        $('.form').fadeOut();
     });
 </script>
