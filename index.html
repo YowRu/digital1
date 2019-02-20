@@ -73,7 +73,7 @@
     .form{justify-content: center;align-items:flex-start;position:fixed;z-index:3;top:0;left:0;width:100%;
     background-color:rgba(0, 0, 0, 0.84);overflow: scroll;display:none;}
     #contactForm{width:500px;margin:0 auto;border: 1px solid #444;padding:30px;
-        position:relative;background:#fff;transform: rotateX(30deg);}
+        position:relative;background:#fff; }
     #contactForm .flex{display:flex;width:80%;align-items:center;}
     #contactForm .flex p{width:100px;font-size:1.2rem;color:#444;}
     
@@ -272,7 +272,10 @@
             <li><img src="img/logo/12.png" /></li>
           </ul>
         </div>
-        <div class="form">
+        
+    </div>
+    <footer></footer>
+    <div class="form">
              <form name="contactForm" id="contactForm" method="post" action="">
               <div class="close">X</div>
               <h2>聯絡我們</h2>
@@ -319,16 +322,10 @@
               
                <div><input type="submit" value="送出"></div>
         </form>
-            <script>
-            $('#datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
-            </script>
         </div>  
-    </div>
-    <footer></footer>
+    
 <script>
 $(window).load(function() {
-
-
 
 var W=$(window).width();
 var H=$(window).height();
@@ -358,7 +355,8 @@ $('.flexslider2').flexslider({
     $('#contactForm input').blur(function(){
          $(this).siblings('label').css({'opacity':'0'});
     })
-     
+   $('#datepicker').datepicker({ dateFormat: 'yy-mm-dd', beforeShow: function () { } });
+
  });    
 </script> 
 </body>
