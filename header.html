@@ -30,6 +30,31 @@
     if ($H - 40 < h) {
         $('header .row1 .menu').css({ 'overflow-y': 'scroll' });
     };
+    var h = $('#main #row1 .left div').height();
+        $('#main .bg').height(H);
+        if(W > 999){
+            $('.flexslider .slides img').height(H);
+           }else{
+                  $('.flexslider .slides img').css({'height':'auto'}); 
+                   }
+      //slider
+
+        $('.flexslider').flexslider({
+            animation: "slide"
+        });
+
+        $('.flexslider2').flexslider({
+            animation: "slide",
+            itemWidth: 190,
+            itemMargin: 3
+        });
+   
+        //row3
+        AOS.init({
+            easing: 'easeInQuad',
+            duration: '1300'
+        });
+    
     $(window).resize(function () {
          var $H = $(window).height();
         var $W = $(window).width();
@@ -60,17 +85,17 @@
     if ($W < 415) {
         $('a.about').click(function () {
             $('html,body').animate({
-                scrollTop: $('#row1').offset().top - 83
+                scrollTop: $('#row1').offset().top - 140
             }, 800);
         });
         $('a.service').click(function () {
             $('html,body').animate({
-                scrollTop: $('#row2').offset().top - 83
+                scrollTop: $('#row2').offset().top - 140
             }, 800);
         });
         $('a.client').click(function () {
             $('html,body').animate({
-                scrollTop: $('#row4').offset().top - 83
+                scrollTop: $('#row4').offset().top - 140
             }, 800);
         });
     } else {
@@ -116,5 +141,23 @@
     $('#contactForm .close').click(function () {
         $('.form').fadeOut();
         location.reload();
+    //
+        var W = $(window).width();
+        var H = $(window).height();
+        
+        //input css
+        $('#contactForm input').focus(function () {
+            $(this).siblings('label').css({ 'opacity': '1' });
+        });
+        $('#contactForm input').blur(function () {
+            $(this).siblings('label').css({ 'opacity': '0' });
+        })
+        
+        var pickerOpts = {
+            dateFormat: "yy/mm/dd"
+        };
+
+        $('#dtStart').datepicker(pickerOpts);
+        $('#dtEnd').datepicker(pickerOpts);
     });
 </script>
