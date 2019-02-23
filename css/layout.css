@@ -186,7 +186,7 @@ padding: 30px;position: relative;background: #fff;     overflow-y: scroll;}
 #main #row1 .left div.svg:after{content:'';display:none;}
      svg path{stroke:#000;fill:#fff;stroke-width:2px;
         stroke-dasharray:100;stroke-dasharray: 2200;stroke-dashoffset:2200;
-        transition: all 4s;animation: 7s a infinite 3s,3s a2 infinite 7s;
+        transition: all 4s;animation: 7s a infinite 0.5s,3s a2 infinite 7s;
      }
     @keyframes a{
         form{stroke-dashoffset:2200;}
