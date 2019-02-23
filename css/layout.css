@@ -45,6 +45,7 @@ header .row1 .menu a{display:block;background-color:rgb(28, 28, 28);margin:0;col
 /*flexslider*/
 .flexslider{border:0;}
 .flex-direction-nav a{z-index:1;}
+
 /*footer*/
 footer{width:100%;padding:40px 0 30px;margin:0 auto;color:#6f6f6f;background-color:#222;
     text-align:center;font-size:0.9rem;}
@@ -71,7 +72,9 @@ border-radius:50%;cursor:pointer;background-color:#fff;display:none;}
 #bottom2 #cartInfo i.flaticon-tool:before{content:"\f11c";position:absolute;top:-30px;left:-40px;background-color: aqua;}
 /*backtop*/
 #backtop{width:45px;height:45px;background: url("../img/arrow-up_b.png") no-repeat center;background-size: contain; display: none; position:fixed; right:5%;bottom:5%;z-index:5; cursor: pointer;opacity:0.8;}
-
+@media(min-width:1000px){
+    .flexslider .slides img{object-fit: cover;}
+}
 @media(max-width:1280px){
            header .row1 .right a{font-size:14px;}
 }
@@ -111,6 +114,7 @@ border-radius:50%;cursor:pointer;background-color:#fff;display:none;}
 @media(max-width:414px){
     header .row p{flex-direction: column;height: auto;align-items: flex-start;}
     header .row p span:nth-of-type(1):after{content:' ';}
+    #main{margin-top:140px;}
    
 }
 /**/
