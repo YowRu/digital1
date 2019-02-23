@@ -263,6 +263,14 @@
         </form>
     </div>
     <script>
+	    $('.flexslider').flexslider({
+                animation: "slide"
+            });
+            $('.flexslider2').flexslider({
+                animation: "slide"
+                , itemWidth: 190
+                , itemMargin: 3
+            });
         $(window).load(function () {
             var W = $(window).width();
             var H = $(window).height();
@@ -276,14 +284,7 @@
                     'height': 'auto'
                 });
             };
-            $('.flexslider').flexslider({
-                animation: "slide"
-            });
-            $('.flexslider2').flexslider({
-                animation: "slide"
-                , itemWidth: 190
-                , itemMargin: 3
-            });
+            
             //row3
             AOS.init({
                 easing: 'easeInQuad'
